@@ -21,11 +21,9 @@ from home.views import home, user_page  # importer les vues
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('products.urls')),  # si tu veux garder les produits
-    path('', home, name='home'),                  # page d'accueil
-    path('users/', user_page, name='user_page'),  # page Users
-    path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
+    path('', home, name='home'),
+    path('users/', user_page, name='user_page'),
 ]
 
 

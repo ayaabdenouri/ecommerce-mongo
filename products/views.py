@@ -1,8 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 
+# Index page - show all products
+def index(request):
+    all_products = Product.objects.all()
+    return render(request, 'products/index.html', {'products': all_products})
+
 # Liste des catégories
-def categories(request):
+def categories_list(request):
     all_categories = Category.objects.all()
     return render(request, 'products/categories.html', {'categories': all_categories})
 

@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Tous les Produits</title>
+    <title>Produits - {{ category.name }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
-    <h1>Tous les Produits</h1>
+    <h1>Produits dans {{ category.name }}</h1>
     <div class="row mt-4">
         {% for product in products %}
         <div class="col-md-4 mb-3">
@@ -16,20 +16,20 @@
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                    <p class="card-text">{{ product.description }}</p>
                     <p class="card-text"><strong>Prix :</strong> {{ product.price }} €</p>
                     <p class="card-text"><strong>Stock :</strong> {{ product.stock }}</p>
-                    <p class="card-text"><small class="text-muted">Catégorie: {{ product.category.name }}</small></p>
                 </div>
             </div>
         </div>
         {% empty %}
         <div class="col-12">
-            <p class="alert alert-info">Aucun produit disponible.</p>
+            <p class="alert alert-info">Aucun produit dans cette catégorie.</p>
         </div>
         {% endfor %}
     </div>
-    <a href="{% url 'categories_list' %}" class="btn btn-primary mt-4">Voir les catégories</a>
-    <a href="{% url 'home' %}" class="btn btn-secondary mt-4">Retour à l'accueil</a>
+    <a href="{% url 'categories_list' %}" class="btn btn-primary mt-4">Retour aux catégories</a>
+    <a href="{% url 'index' %}" class="btn btn-secondary mt-4">Voir tous les produits</a>
 </body>
 </html>
+
