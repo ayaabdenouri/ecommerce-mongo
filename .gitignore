@@ -1,22 +1,53 @@
+# Visual Studio cache
+.vs/
+
 # Python
-_pycache_/
 *.pyc
 *.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+*.swn
+
+# Environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Django
 *.log
+*.pot
+*.py[cod]
 db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+*.mo
 
-# Environment
-venv/
-.env
-*.env
-ENV/
-env/
-.venv/
-
-# OS and IDE
+# IDEs / Editors
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
 .DS_Store
 Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+cover/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Node / front-end (if any)
+node_modules/
+dist/
+build/
